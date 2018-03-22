@@ -2,6 +2,7 @@ package com.zeroexception.dbconnection;
 
 import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.zeroexception.dbconnection.dataModel.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -26,5 +27,7 @@ public class DbConnectionApplication implements CommandLineRunner {
 		ObjectNode node = JsonNodeFactory.instance.objectNode();
 		node.put("time stamp", LocalDateTime.now().format(DateTimeFormatter.ofPattern("hh:MM:ss")));
 		this.mongoTemplate.save(node, "test");
+
+		Person person = new Person();
 	}
 }
