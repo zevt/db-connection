@@ -8,6 +8,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.mongodb.core.MongoTemplate;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 @SpringBootApplication
 public class DbConnectionApplication implements CommandLineRunner {
 
@@ -21,7 +24,7 @@ public class DbConnectionApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		ObjectNode node = JsonNodeFactory.instance.objectNode();
-		node.put("message","test");
+		node.put("time stamp", LocalDateTime.now().format(DateTimeFormatter.ofPattern("hh:MM:ss")));
 		this.mongoTemplate.save(node, "test");
 	}
 }
