@@ -1,0 +1,5 @@
+DROP TABLE IF EXISTS tb_local;
+CREATE TABLE tb_local (
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(255)
+)
