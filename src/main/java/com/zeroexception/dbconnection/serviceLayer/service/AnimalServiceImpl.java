@@ -22,6 +22,6 @@ public class AnimalServiceImpl implements AnimalService {
     @Override
     public List<Animal> findAllPage(int pageNumber, int size) {
         Page<Animal> page = this.animalRepo.findAll(PageRequest.of(pageNumber, size));
-        return page.getContent());
+        return page.getContent();
     }
 }
