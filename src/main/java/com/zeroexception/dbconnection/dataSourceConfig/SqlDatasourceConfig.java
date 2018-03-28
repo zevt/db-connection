@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.jdbc.DataSourceBuilder;
-import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -84,7 +83,6 @@ public class SqlDatasourceConfig {
 //        Set the package of data Model which uses this dataSource to persist data
         factoryBean.setPackagesToScan("com.zeroexception.dbconnection.dataModel2");
 
-//        EntityManagerFactoryBuilder builder = new EntityManagerFactoryBuilder();
         factoryBean.afterPropertiesSet();
 
         return factoryBean.getObject();
