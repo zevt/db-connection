@@ -21,8 +21,10 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
-@EnableJpaRepositories(basePackages = {"com.zeroexception.dbconnection.serviceLayer.animalRepo"}
+@EnableJpaRepositories(
+        basePackages = {"com.zeroexception.dbconnection.serviceLayer.animalRepo"}
 )
+
 public class SqlDatasourceConfig {
 
 
@@ -79,6 +81,7 @@ public class SqlDatasourceConfig {
         factoryBean.setJpaVendorAdapter(vendorAdapter);
         factoryBean.setDataSource(dataSource);
         factoryBean.setJpaProperties(jpaProperties);
+//        Set the package of data Model which uses this dataSource to persist data
         factoryBean.setPackagesToScan("com.zeroexception.dbconnection.dataModel2");
 
 //        EntityManagerFactoryBuilder builder = new EntityManagerFactoryBuilder();
