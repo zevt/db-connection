@@ -31,6 +31,8 @@ public class SqlQueryController {
             System.out.println(s);
         }
 
+        System.out.println(String.class.toString());
+
         List<Animal> animalList = this.animalRepo.getAll();
 
         return new ResponseEntity<>(animalList, HttpStatus.OK);
