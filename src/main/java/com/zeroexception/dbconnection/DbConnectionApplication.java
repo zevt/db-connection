@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.zeroexception.dbconnection.dataModel.Person;
 import com.zeroexception.dbconnection.dataModel2.Animal;
+import java.util.Properties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -20,9 +21,14 @@ public class DbConnectionApplication implements CommandLineRunner {
 	@Autowired
 	private MongoTemplate mongoTemplate;
 
-
-
 	public static void main(String[] args) {
+
+//		Properties props = System.getProperties();
+//		props.put("http.proxyHost", "coia.hcvpc.io");
+//		props.put("http.proxyPort", "9400");
+//		props.put("https.proxyHost", "coia.hcvpc.io");
+//		props.put("https.proxyPort", "9400");
+
 		SpringApplication.run(DbConnectionApplication.class, args);
 	}
 
