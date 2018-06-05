@@ -12,6 +12,9 @@
   <name>db-connection</name>
   <description>DB Connection using Spring Boot</description>
 
+  <modules>
+    <module>mongo-connection</module>
+  </modules>
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>

@@ -22,7 +22,7 @@ public class SqlQueryController {
     @Autowired
     private AnimalRepository animalRepo;
 
-    @GetMapping("/get-all")
+    @GetMapping("/all")
     public ResponseEntity<?> getAll() {
 
         List<String> nameList = jdbcTemplate.queryForList("SELECT name FROM experiment.tb_animal", String.class);

@@ -5,6 +5,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "tb_animal")
+
 public class Animal {
 
     @Id
