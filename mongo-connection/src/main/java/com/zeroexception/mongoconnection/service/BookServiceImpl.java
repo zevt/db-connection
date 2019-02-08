@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class BookServiceImpl implements BookService {
 
-  private static final String BOOK_COLLECTION = "books";
+  private static final String BOOK_COLLECTION = "test";
 
   private MongoTemplate mongoTemplate;
 

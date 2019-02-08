@@ -10,10 +10,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @TypeAlias("Book")
 public class Book {
 
-  @Id @Getter private BigInteger id;
-  @Getter private String title;
-  @Getter private String author;
-  @Getter private String publisherId;
+  @Id
+  @Getter
+  private BigInteger id;
+  @Getter
+  private String title;
+  @Getter
+  private String author;
+  @Getter
+  private String publisherId;
 
   public Book setId(BigInteger id) {
     this.id = id;

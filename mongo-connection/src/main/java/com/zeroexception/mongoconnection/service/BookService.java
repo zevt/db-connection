@@ -11,7 +11,10 @@ public interface BookService {
 
 
   void save(Book book);
+
   Book findWithTitle(String title);
+
   List<Book> findAllByAuthor(String author);
+
   void deleteAll();
 }
