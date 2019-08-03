@@ -3,6 +3,8 @@ package com.zeroexception.mongoconnection.dataSourceConfig;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
+import com.mongodb.ReadPreference;
+import com.mongodb.WriteConcern;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -28,6 +30,9 @@ public class MongoDBConfig {
 
   @Bean
   public MongoTemplate mongoTemplate() {
-    return new MongoTemplate(mongoClient(), this.dbName);
+    MongoTemplate template =  new MongoTemplate(mongoClient(), this.dbName);
+    template.setReadPreference(ReadPreference.secondaryPreferred());
+    template.setWriteConcern(WriteConcern.MAJORITY);
+    return template;
   }
 }
